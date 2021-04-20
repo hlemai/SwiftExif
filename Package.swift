@@ -34,17 +34,19 @@ let package = Package(
       pkgConfig: "libiptcdata",
       providers: [
         .apt(["libiptcdata0-dev"]),
-        .brew(["libiptcdata"]),
+        .brew(["libiptcdata"])
       ]
     ),
     .target(
       name: "ExifFormat",
       dependencies: [],
-      path: "Sources/ExifFormat"
+      path: "Sources/ExifFormat",
+      cSettings: [.unsafeFlags(["-I","/opt/homebrew/include"])]
     ),
     .target(
       name: "SwiftExif",
-      dependencies: ["exif", "ExifFormat", "iptc"]
+      dependencies: ["exif", "ExifFormat", "iptc"],
+      cSettings: [.unsafeFlags(["-I","/opt/homebrew/include"])]
     ),
     .testTarget(
       name: "SwiftExifTests",

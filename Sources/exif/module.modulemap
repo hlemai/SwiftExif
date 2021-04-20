@@ -1,4 +1,5 @@
 module exif {
 	umbrella header "swiftexif_exif.h"
-	link "exif"
+	//link "exif"
+    export *
 }
