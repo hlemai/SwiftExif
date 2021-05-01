@@ -40,13 +40,11 @@ let package = Package(
     .target(
       name: "ExifFormat",
       dependencies: [],
-      path: "Sources/ExifFormat",
-      cSettings: [.unsafeFlags(["-I","/opt/homebrew/include"])]
+      path: "Sources/ExifFormat"
     ),
     .target(
       name: "SwiftExif",
-      dependencies: ["exif", "ExifFormat", "iptc"],
-      cSettings: [.unsafeFlags(["-I","/opt/homebrew/include"])]
+      dependencies: ["exif", "ExifFormat", "iptc"]
     ),
     .testTarget(
       name: "SwiftExifTests",
