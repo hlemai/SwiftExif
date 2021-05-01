@@ -39,17 +39,17 @@ let package = Package(
     ),
     .target(
       name: "ExifFormat",
-      dependencies: [],
+      dependencies: ["exif"],
       path: "Sources/ExifFormat"
     ),
     .target(
       name: "SwiftExif",
       dependencies: ["exif", "ExifFormat", "iptc"]
     ),
-    .testTarget(
-      name: "SwiftExifTests",
-      dependencies: ["SwiftExif"]
-    ),
+//    .testTarget(
+//      name: "SwiftExifTests",
+//      dependencies: ["SwiftExif"]
+//    ),
   ],
   swiftLanguageVersions: [.v5],
   cLanguageStandard: .c11
